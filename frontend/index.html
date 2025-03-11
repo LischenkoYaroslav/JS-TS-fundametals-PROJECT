@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./favicon.png" type="image/x-icon" />
+    <title>Smart Home</title>
+    <link rel="stylesheet" href="./styles/index.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app__header">
+        <h1 class="app__title">This is your Smart Home</h1>
+      </header>
+      <main class="app__content">
+        <section class="app__devices">
+          <h2 class="app__devices-title">Your Smart Lamps</h2>
+          <div class="app__devices-container" id="lamps-container">
+            <!-- <article class="app__device" id="lamp-1">
+              <div class="app_device-status">
+                <h3 class="app__device-title">Bedroom Lamp 1</h3>
+                <div class="toggle-switch">
+                  <input class="toggle-input" id="toggle" type="checkbox"/>
+                  <label class="toggle-label" for="toggle"></label>
+                </div>
+              </div>
+              <div class="app__device-properties">
+                <p class="app__device-value-text">
+                  Brightness
+                  <span class="app__device-value">100</span>
+                </p>
+                <p class="app__device-value-text">
+                  Default Brightness
+                  <span class="app__device-value">80</span>
+                </p>
+              </div>
+              <div class="app__device-control">
+                <h5 class="app__device-control-description">
+                  Adjust Brightness
+                </h5>
+                <div class="app__device-control-buttons">
+                  <button
+                    class="app__device-control-button control-button--increase"
+                  >
+                    +
+                  </button>
+                  <button
+                    class="app__device-control-button control-button--decrease"
+                  >
+                    -
+                  </button>
+                </div>
+              </div>
+              <div class="app__device-remove">
+                <button class="app__device-remove-button" data-confirm="false">
+                  Delete
+                </button>
+              </div>
+            </article> -->
+            <section class="app__device add-device" id="add-lamp">
+              <h4 class="app__device-add-icon">+</h4>
+            </section>
+          </div>
+        </section>
+        <section class="app__add-popup">
+          <input
+            class="app__add-popup-input"
+            type="text"
+            placeholder="Enter device name"
+          />
+          <button class="app__add-popup-button">Add</button>
+        </section>
+      </main>
+    </main>
+    <script type="module" src="./scripts/index.js"></script>
+  </body>
+</html>

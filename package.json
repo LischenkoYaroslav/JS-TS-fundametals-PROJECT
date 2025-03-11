@@ -1,0 +1,17 @@
+{
+  "name": "js-ts-fundametals-project",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/LischenkoYaroslav/JS-TS-fundametals-PROJECT#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LischenkoYaroslav/JS-TS-fundametals-PROJECT.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "./frontend/index.js",
+  "scripts": {
+    "start": "node ./backend/server.js"
+  }
+}
