@@ -45,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("unload", () => {
     const updatedLamps = [];
     for (const lamp of mySmartHome.lamps) {
+      lamp.turnOnOff();
       updatedLamps.push({
         id: lamp.id,
         name: lamp.name,
