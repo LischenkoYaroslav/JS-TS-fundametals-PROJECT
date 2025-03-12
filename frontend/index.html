@@ -57,18 +57,28 @@
                 </button>
               </div>
             </article> -->
-            <section class="app__device add-device" id="add-lamp">
+            <section class="app__device add-device" data-device-group="lamps">
               <h4 class="app__device-add-icon">+</h4>
             </section>
           </div>
         </section>
         <section class="app__add-popup">
-          <input
-            class="app__add-popup-input"
-            type="text"
-            placeholder="Enter device name"
-          />
-          <button class="app__add-popup-button">Add</button>
+          <div class="app__devices app_add-popup-container">
+            <input
+              class="app__add-popup-input app__device"
+              id="input__device-name"
+              type="text"
+              placeholder="Enter device name"
+            />
+            <div class="app__device-control-buttons">
+              <button class="app__device-control-button" id="add-device--add">
+                Add
+              </button>
+              <button class="app__device-control-button" id="add-device--close">
+                Back
+              </button>
+            </div>
+          </div>
         </section>
       </main>
     </main>

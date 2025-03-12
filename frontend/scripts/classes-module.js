@@ -17,14 +17,45 @@ class SmartHome {
   addKettle(device) {
     this.kettles.push(device);
   }
-  saveDevicesToServer() {}
-  loadDevicesFromServer() {
-    let lamp1 = new Lamp("Bedroom Lamp 2", "on", 20);
-    let lamp2 = new Lamp("Bathroom");
-    let lamp3 = new Lamp("Soft lights", "off");
-    this.addLamp(lamp1);
-    this.addLamp(lamp2);
-    this.addLamp(lamp3);
+  async saveDevicesToServer(url) {
+    this.lamps.forEach((lamp) => {
+      if (lamp.status === "on") {
+        lamp.turnOnOff();
+      }
+    });
+    const updatedLamps = [];
+    for (const lamp of this.lamps) {
+      updatedLamps.push({
+        id: lamp.id,
+        name: lamp.name,
+        defaultBrightness: lamp.defaultBrightness,
+      });
+    }
+    await fetch(url, {
+      method: "POST",
+      body: JSON.stringify(updatedLamps),
+    });
+  }
+  async loadDevicesFromServer(url) {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      const data = await response.json();
+      if (data.length === 0) {
+        console.log("No devices saved on server!");
+        return;
+      }
+      data.forEach((device) => {
+        const newLamp = new Lamp(device.name, "off", device.defaultBrightness);
+        this.addLamp(newLamp);
+      });
+      Lamp.id = data[data.length - 1].id;
+      console.log("Data received:", data);
+    } catch (error) {
+      console.log("Error fetching data:", error.message);
+    }
   }
 }
 

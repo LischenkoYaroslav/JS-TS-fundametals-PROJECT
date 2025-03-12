@@ -1,6 +1,8 @@
 @import url(./global.css);
 @import url(./switch-button.css);
 
+/* GENERAL STYLES */
+
 .app {
   margin: 0 auto;
   padding: 10px;
@@ -166,6 +168,8 @@
   }
 }
 
+/* REMOVE BUTTON */
+
 .app__device-remove-button {
   flex: 1;
   padding: 5px 24px;
@@ -196,5 +200,52 @@
   &:hover {
     cursor: pointer;
     background: #ea595bbb;
+  }
+}
+
+/* ADDING NEW DEVICE POPUP */
+
+.app__add-popup {
+  padding: 20px;
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--main-color);
+  opacity: 0;
+  transition: all 0.5s ease-out;
+}
+
+.app__add-popup--active {
+  top: 0;
+  opacity: 100;
+}
+
+.app__add-popup-input {
+  border: 1px solid #fff;
+}
+
+.app_add-popup-container {
+  width: 100%;
+  max-width: 400px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+@media (max-width: 480px) {
+  .app_add-popup-container {
+    .app__device-control-buttons {
+      flex-direction: column;
+      .app__device-control-button {
+        width: 100%;
+      }
+    }
   }
 }

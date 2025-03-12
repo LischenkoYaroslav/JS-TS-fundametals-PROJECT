@@ -123,6 +123,7 @@ function renderLamp(lamp, outputContainer) {
   const removeButton = document.createElement("button");
   removeButton.classList.add("app__device-remove-button");
   removeButton.setAttribute("data-confirm", "false");
+  removeButton.setAttribute("data-device-group", "lamps");
   removeButton.setAttribute("data-id", lamp.id);
   removeButton.textContent = "Delete";
 

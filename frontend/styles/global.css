@@ -9,8 +9,8 @@
 }
 
 :root {
-    --main-color: #dddfd8;
-    --text-color: #483B3B; 
+  --main-color: #dddfd8;
+  --text-color: #483b3b;
 }
 
 ul,
@@ -39,11 +39,16 @@ img {
 }
 
 body {
+  position: relative;
   font-family: "Outfit", sans-serif;
   line-height: 1.5;
   background: var(--main-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
 
 h1,
