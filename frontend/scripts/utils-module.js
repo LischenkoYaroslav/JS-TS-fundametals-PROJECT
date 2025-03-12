@@ -54,7 +54,7 @@ function creatingNewDeviceHandler(button, outputElement, smartHomeInstance) {
         .querySelector(`#lamp-${newLamp.id}`)
         .querySelector(".app__device-remove-button");
       newLampDeleteButton.addEventListener("click", (event) => {
-        deleteDevice(event, smartHomeInstance.lamps);
+        deleteDevice(event, smartHomeInstance);
       });
       openClosePopup();
       addDeviceInput.value = "";

@@ -43,6 +43,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.addEventListener("click", removeConfirmation);
   window.addEventListener("unload", () => {
-    mySmartHome.saveDevicesToServer(`${URL}/lamps`);
+    const updatedLamps = [];
+    for (const lamp of mySmartHome.lamps) {
+      updatedLamps.push({
+        id: lamp.id,
+        name: lamp.name,
+        defaultBrightness: lamp.defaultBrightness,
+      });
+    }
+    const updatedLampsText = JSON.stringify(updatedLamps);
+    navigator.sendBeacon(`${URL}/lamps`, updatedLampsText);
   });
 });
